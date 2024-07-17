@@ -1,0 +1,34 @@
+tag: MAJOR
+name: add data for products_db
+databaseChangeLog:
+  - changeSet:
+      id: insert-products
+      author: Evgeniy Kanareikin
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO products (id, name, brand, model, available_quantity, availability, weight, rating, category, color, price, photo_name, image_url, photo, warranty, description)
+              VALUES (1, 'Прекрасные наушники', 'Acme', 'Model123', 100, true, '200 г', 4.5, 'Электроника', 'черный', 49.99, 'headphones.jpg', 'https://plus.unsplash.com/premium_photo-1678099940967-73fe30680949?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'example1', '2 года', 'Прекрасные наушники Acme, цвет: черный. Активное шумоподавление, Складной дизайн, Встроенный микрофон'),
+                     (2, 'Умные часы', 'TechBrand', 'SmartWatchX', 50, true, '50 г', 4.8, 'Гаджеты', 'серебристый', 199.99, 'smartwatch.jpg', 'https://example.com/images/smartwatch.jpg', 'example2','1 год', 'Умные часы TechBrand с множеством функций, включая мониторинг здоровья и уведомления'),
+                     (3, 'Игровая клавиатура', 'GameMaster', 'GK-200', 200, true, '800 г', 4.7, 'Компьютерные аксессуары', 'черный', 79.99, 'keyboard.jpg', 'https://example.com/images/keyboard.jpg', 'example3','3 года', 'Игровая клавиатура GameMaster с подсветкой и программируемыми клавишами');
+  - changeSet:
+      id: insert-product_features
+      author: Evgeniy Kanareikin
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO product_features (product_id, feature)
+              VALUES ((SELECT id FROM products WHERE name = 'Прекрасные наушники'), 'Активное шумоподавление'),
+                     ((SELECT id FROM products WHERE name = 'Прекрасные наушники'), 'Складной дизайн'),
+                     ((SELECT id FROM products WHERE name = 'Прекрасные наушники'), 'Встроенный микрофон'),
+                     ((SELECT id FROM products WHERE name = 'Умные часы'), 'Мониторинг здоровья'),
+                     ((SELECT id FROM products WHERE name = 'Умные часы'), 'Уведомления'),
+                     ((SELECT id FROM products WHERE name = 'Игровая клавиатура'), 'Подсветка'),
+                     ((SELECT id FROM products WHERE name = 'Игровая клавиатура'), 'Программируемые клавиши');
+  - changeSet:
+      id: fill-products-seq
+      author: Evgeniy Kanareikin
+      changes:
+        - sql:
+            sql: |
+              ALTER SEQUENCE products_seq RESTART WITH 53;

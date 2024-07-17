@@ -1,0 +1,122 @@
+tag: MAJOR
+name: create tables for products_db
+databaseChangeLog:
+  - changeSet:
+      id: create-products_seq-table
+      author: Evgeniy Kanareikin
+      changes:
+        - createSequence:
+            incrementBy: 50
+            ordered: true
+            sequenceName: products_seq
+            startValue: 1
+  - changeSet:
+      id: create-products-table
+      author: Evgeniy Kanareikin
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brand
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: model
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: available_quantity
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: availability
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: weight
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rating
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: color
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: photo_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: photo
+                  type: BLOB
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: warranty
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(1024)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create-product_features-table
+      author: Evgeniy Kanareikin
+      changes:
+        - createTable:
+            tableName: product_features
+            columns:
+              - column:
+                  name: product_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_features_product
+                    references: products(id)
+              - column:
+                  name: feature
+                  type: varchar(255)
+        - addUniqueConstraint:
+            tableName: product_features
+            columnNames: product_id, feature
+            constraintName: unique_product_feature

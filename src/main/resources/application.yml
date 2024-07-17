@@ -1,0 +1,42 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: Product Card
+  datasource:
+    url: jdbc:h2:mem:products_db
+    driver-class-name: org.h2.Driver
+    username: admin
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog-master.yml
+remove-bg-api:
+  api-url: https://api.remove.bg/v1.0/removebg
+  x-api-key: PahMapiD7BjvsbEFNySfTWqL
+  destination-path:
+    source: src/main/resources/images/source_image/
+    processed: src/main/resources/images/processed_image/
+logging:
+  level:
+    root: info
+    by.fin.product_card: debug
+  file:
+    path: ../../
+    name: finByLog.log
+  logback:
+    rolling policy:
+      total-size-cap: 50MB

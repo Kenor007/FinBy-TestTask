@@ -1,0 +1,62 @@
+2024-07-17T10:49:26.656+03:00  INFO 9468 --- [Product Card] [restartedMain] b.f.product_card.ProductCardApplication  : Starting ProductCardApplication using Java 17.0.6 with PID 9468 (C:\FinBy\finByTestTask\products\build\classes\java\main started by kenor in C:\FinBy\finByTestTask\products)
+2024-07-17T10:49:26.659+03:00 DEBUG 9468 --- [Product Card] [restartedMain] b.f.product_card.ProductCardApplication  : Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-07-17T10:49:26.659+03:00  INFO 9468 --- [Product Card] [restartedMain] b.f.product_card.ProductCardApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-07-17T10:49:26.694+03:00  INFO 9468 --- [Product Card] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-17T10:49:26.696+03:00  INFO 9468 --- [Product Card] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-17T10:49:27.391+03:00  INFO 9468 --- [Product Card] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-17T10:49:27.451+03:00  INFO 9468 --- [Product Card] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 1 JPA repository interface.
+2024-07-17T10:49:27.901+03:00  INFO 9468 --- [Product Card] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2024-07-17T10:49:27.903+03:00  INFO 9468 --- [Product Card] [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.6] using APR version [1.7.4].
+2024-07-17T10:49:27.906+03:00  INFO 9468 --- [Product Card] [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.11 19 Sep 2023]
+2024-07-17T10:49:27.913+03:00  INFO 9468 --- [Product Card] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-17T10:49:27.913+03:00  INFO 9468 --- [Product Card] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-17T10:49:27.965+03:00  INFO 9468 --- [Product Card] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-17T10:49:27.965+03:00  INFO 9468 --- [Product Card] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1269 ms
+2024-07-17T10:49:27.987+03:00  INFO 9468 --- [Product Card] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-17T10:49:28.071+03:00  INFO 9468 --- [Product Card] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:products_db user=ADMIN
+2024-07-17T10:49:28.073+03:00  INFO 9468 --- [Product Card] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-17T10:49:28.082+03:00  INFO 9468 --- [Product Card] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:products_db'
+2024-07-17T10:49:28.205+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.database                       : Set default schema name to PUBLIC
+2024-07-17T10:49:28.483+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2024-07-17T10:49:28.565+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-07-17T10:49:28.649+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2024-07-17T10:49:28.650+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.command                        : Using deploymentId: 1202568650
+2024-07-17T10:49:28.652+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-07-17T10:49:28.679+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Sequence products_seq created
+2024-07-17T10:49:28.679+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelogs/create-tables.yml::create-products_seq-table::Evgeniy Kanareikin ran successfully in 4ms
+2024-07-17T10:49:28.690+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Table products created
+2024-07-17T10:49:28.691+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelogs/create-tables.yml::create-products-table::Evgeniy Kanareikin ran successfully in 3ms
+2024-07-17T10:49:28.702+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Table product_features created
+2024-07-17T10:49:28.705+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Unique constraint added to product_features(product_id, feature)
+2024-07-17T10:49:28.705+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelogs/create-tables.yml::create-product_features-table::Evgeniy Kanareikin ran successfully in 10ms
+2024-07-17T10:49:28.718+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2024-07-17T10:49:28.719+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelogs/add-data.yml::insert-products::Evgeniy Kanareikin ran successfully in 13ms
+2024-07-17T10:49:28.729+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2024-07-17T10:49:28.730+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelogs/add-data.yml::insert-product_features::Evgeniy Kanareikin ran successfully in 9ms
+2024-07-17T10:49:28.733+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2024-07-17T10:49:28.733+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/changelogs/add-data.yml::fill-products-seq::Evgeniy Kanareikin ran successfully in 1ms
+2024-07-17T10:49:28.736+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2024-07-17T10:49:28.737+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.util                           : Run:                          6
+2024-07-17T10:49:28.737+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.util                           : Previously run:               0
+2024-07-17T10:49:28.737+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.util                           : Filtered out:                 0
+2024-07-17T10:49:28.737+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.util                           : -------------------------------
+2024-07-17T10:49:28.737+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.util                           : Total change sets:            6
+2024-07-17T10:49:28.737+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.util                           : Update summary generated
+2024-07-17T10:49:28.739+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.command                        : Update command completed successfully.
+2024-07-17T10:49:28.741+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-07-17T10:49:28.741+03:00  INFO 9468 --- [Product Card] [restartedMain] liquibase.command                        : Command execution complete
+2024-07-17T10:49:28.795+03:00  INFO 9468 --- [Product Card] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-17T10:49:28.841+03:00  INFO 9468 --- [Product Card] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-17T10:49:28.874+03:00  INFO 9468 --- [Product Card] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-17T10:49:29.055+03:00  INFO 9468 --- [Product Card] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-17T10:49:29.084+03:00  WARN 9468 --- [Product Card] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-17T10:49:29.806+03:00  INFO 9468 --- [Product Card] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-17T10:49:29.810+03:00  INFO 9468 --- [Product Card] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-17T10:49:30.585+03:00  INFO 9468 --- [Product Card] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-17T10:49:30.621+03:00  INFO 9468 --- [Product Card] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path ''
+2024-07-17T10:49:30.633+03:00  INFO 9468 --- [Product Card] [restartedMain] b.f.product_card.ProductCardApplication  : Started ProductCardApplication in 4.356 seconds (process running for 4.896)
+2024-07-17T10:49:34.353+03:00  INFO 9468 --- [Product Card] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-17T10:49:34.357+03:00  WARN 9468 --- [Product Card] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-07-17T10:49:34.358+03:00  INFO 9468 --- [Product Card] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-17T10:49:34.359+03:00  INFO 9468 --- [Product Card] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
