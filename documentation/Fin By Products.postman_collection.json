@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "23399aa4-bdc2-4227-9a33-6aecb7eadf4a",
+		"name": "Fin By Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18124754"
+	},
+	"item": [
+		{
+			"name": "post create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Прекрасные наушники\",\r\n    \"brand\": \"Acme\",\r\n    \"model\": \"Model123\",\r\n    \"availableQuantity\": 100,\r\n    \"availability\": true,\r\n    \"weight\": \"200 г\",\r\n    \"rating\": 4.5,\r\n    \"category\": \"Электроника\",\r\n    \"color\": \"черный\",\r\n    \"price\": 49.99,\r\n    \"photoName\": \"headphones.jpg\",\r\n    \"imageUrl\": \"https://plus.unsplash.com/premium_photo-1678099940967-73fe30680949?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\r\n    \"warranty\": \"2 года\",\r\n    \"features\": [\r\n        \"Активное шумоподавление\",\r\n        \"Складной дизайн\",\r\n        \"Встроенный микрофон\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8092/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8092/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put update product by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Прекрасные наушники\",\r\n    \"brand\": \"AcmeUpdated\",\r\n    \"model\": \"Model123\",\r\n    \"availableQuantity\": 100,\r\n    \"availability\": true,\r\n    \"weight\": \"200 г\",\r\n    \"rating\": 4.5,\r\n    \"category\": \"Электроника\",\r\n    \"color\": \"черный\",\r\n    \"price\": 49.99,\r\n    \"photoName\": \"headphones.jpg\",\r\n    \"imageUrl\": \"https://example.com/images/headphones.jpg\",\r\n    \"warranty\": \"2 года\",\r\n    \"features\": [\r\n        \"Активное шумоподавление\",\r\n        \"Встроенный микрофон\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8092/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by param highest rating",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/api/products/search/highest rating",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products",
+						"search",
+						"highest rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by param expensive",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/api/products/search/expensive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products",
+						"search",
+						"expensive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by param cheapest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/api/products/search/cheapest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"products",
+						"search",
+						"cheapest"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
