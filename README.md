@@ -41,4 +41,4 @@ timestamp.
 происходит запрос к API(`htps://www.remove.bg/api`) с исходной фотографией для удаления фона с изображения, изменённое
 фото сохраняется в папке `resources/images/processed_image` и добавляется в карточку товара.
 
-### [Коллекция Postman](./documentation/Fin By Products.postman_collection.json)
+### [Коллекция Postman](./documentation/products_postman_collection.json)
